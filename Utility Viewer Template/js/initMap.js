@@ -8,7 +8,7 @@
  */
 
 var app = {};
-var map;
+var map;                            //Map object
 var graphic;
 var isiOS = false;                  //This variable will be set to 'true' if the application is accessed from iPhone or iPad
 var isBrowser = false;              //This variable will be set to 'true' when application is accessed from desktop browsers
