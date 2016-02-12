@@ -63,7 +63,7 @@ NOTE: Built with Visual Studio Express 2013 for Web Web browser
 
 All outside links
 
-    jQuery V 2.1.4, ArcGIS JavaScript API V 3.14, Dojo, jQuery V UI 1.10.4
+    jQuery V 2.1.4, ArcGIS JavaScript API V 3.14, Dojo, jQuery UI v 1.10.4
 
     http://js.arcgis.com/3.14/
 
