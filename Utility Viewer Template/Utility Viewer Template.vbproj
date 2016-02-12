@@ -133,6 +133,10 @@
     <Content Include="js\jquery-2.1.4.min.js" />
     <Content Include="js\KineticPanning.js" />
     <Content Include="js\TocWidget.js" />
+    <Content Include="Preview\_Identify.JPG" />
+    <Content Include="Preview\_Printing.JPG" />
+    <Content Include="Preview\_Starting Screen.JPG" />
+    <Content Include="Preview\_TOC.JPG" />
     <Content Include="proxy\source.txt" />
     <Content Include="styles\styles.css" />
     <Content Include="styles\MapToc.css" />
