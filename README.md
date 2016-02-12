@@ -12,21 +12,21 @@ App
 
 Features
 
-Search - Search for specific features based on a unique ID with the search widget
+    Search - Search for specific features based on a unique ID with the search widget
 
-Measure - Use the ArcGIS measure widget to measure length, area and coordinates
+    Measure - Use the ArcGIS measure widget to measure length, area and coordinates
 
-Printing - Create downloadable map files in multiple formats and sizes with customizeable text and title
+    Printing - Create downloadable map files in multiple formats and sizes with customizeable text and title
 
-Legend - Check or uncheck map service layers to adjust visibility on the map. Slide opacity sliders to adjust transparency of operational and basemap layers.
+    Legend - Check or uncheck map service layers to adjust visibility on the map. Slide opacity sliders to adjust transparency of         operational and basemap layers.
 
-Basemaps - Set different basemaps interactively
+    Basemaps - Set different basemaps interactively
 
-Identify - Click on a feature across multiple map services and view attributes in a customized interface on the left side panel
+    Identify - Click on a feature across multiple map services and view attributes in a customized interface on the left side panel
 
-Custom LODs -ArcGIS basemap Level of detail over ridden to allow for closer zooming capability. Largest scale: 1:35
+    Custom LODs -ArcGIS basemap Level of detail over ridden to allow for closer zooming capability. Largest scale: 1:35
 
-Help -Accordion pane tab with images and titles for each section for a quick documentation guide
+    Help -Accordion pane tab with images and titles for each section for a quick documentation guide
 
 NOTE: Template is built with ArcGIS online sample server URLs. Modify the URLS and data in "js/config.js" to match that of your needs
 
@@ -75,4 +75,4 @@ Anyone and everyone is welcome to contribute.
 
 
 
-Copyright 2013 mheirendt
+Copyright 2015 mheirendt
