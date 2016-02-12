@@ -57,7 +57,7 @@ Requirements
 
 JavaScript and HTML editing software with access to the Internet
 
-NOTE: Built with Visual Studio Express 2013 for Web Web browser
+NOTE: Built with Visual Studio Express 2013 for Web
 
 
 
