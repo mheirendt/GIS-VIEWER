@@ -30,10 +30,10 @@ Fork and then clone the repo. Run the project to view NOTE: You can also cut and
 
 Preview
 
-![alt tag](https://github.com/mheirendt/GIS-VIEWER/raw/GIS-Viewer/Utility Viewer Template/Preview/_Starting Screen.JPG)
-![alt tag](https://github.com/mheirendt/GIS-VIEWER/raw/GIS-Viewer/Utility Viewer Template/Preview/_Identify.JPG)
-![alt tag](https://github.com/mheirendt/GIS-VIEWER/raw/GIS-Viewer/Utility Viewer Template/Preview/_Printing.JPG)
-![alt tag](https://github.com/mheirendt/GIS-VIEWER/raw/GIS-Viewer/Utility Viewer Template/Preview/_TOC.JPG)
+![alt tag](https://github.com/mheirendt/GIS-VIEWER/raw/master/Utility Viewer Template/Preview/_Starting Screen.JPG)
+![alt tag](https://github.com/mheirendt/GIS-VIEWER/raw/master/Utility Viewer Template/Preview/_Identify.JPG)
+![alt tag](https://github.com/mheirendt/GIS-VIEWER/raw/master/Utility Viewer Template/Preview/_Printing.JPG)
+![alt tag](https://github.com/mheirendt/GIS-VIEWER/raw/master/Utility Viewer Template/Preview/_TOC.JPG)
 
 Requirements
 
