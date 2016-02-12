@@ -30,14 +30,16 @@ Features
     
     
 
-NOTE: Template is built with ArcGIS online sample server URLs. Modify the URLS and data in "js/config.js" to match that of your needs
+NOTE: Template is built with ArcGIS online sample server REST URLS. Modify the URLS and data in "js/config.js" to match that of your needs
 
 
 
 
 Instructions
 
-Fork and then clone the repo. Run the project to view NOTE: You can also cut and paste each file into your own project
+Fork and then clone the repo. If you are using Visual Studio for Web, open the "Utility Viewer Template" file at the root directory. Run the project to view 
+
+NOTE: You can also cut and paste each file into your own project
 
 
 
