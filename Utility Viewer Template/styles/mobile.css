@@ -1,0 +1,363 @@
+﻿
+html, body, .textarea
+{
+    font-size: 15px !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for icons, buttons and header styles*/
+
+.customButton
+{
+    height: 35px !important;
+}
+
+.tableHeader
+{
+    width: 100%;
+}
+
+.tdHeader
+{
+    width: 55px;
+    font-weight: bolder;
+}
+.tdHeaderBrowser
+{
+    display: inline-block;
+}
+
+.imgOptions, .imgShare
+{
+    height: 40px !important;
+    width: 40px !important;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.gpsIcon
+{
+    width: 40px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for search container*/
+
+.divAddressContainer
+{
+    top: 0px !important;
+    left: 0px !important;
+    background-color: rgba(0,0,0,.65) !important;
+    position: absolute !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1001 !important;
+}
+
+#search{
+    top:150px;
+    left:25px;
+}
+
+.divAddressContent
+{
+    z-index: 1001;
+    background-color: #585858;
+    width: 100%;
+    height: 100%;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 10px #fff;
+    -moz-box-shadow: 0 0 10px #fff;
+    -o-box-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.divAddressPlaceHolder
+{
+    height: 46px;
+    width: 100%;
+}
+
+.divAddressResultContainer
+{
+    margin: 5px -7px 0px 0px;
+}
+
+.txtBox, .txtAddress
+{
+    font-size: 15px !important;
+    height: 44px !important;
+    width: 70%;
+    padding: 0px !important;
+}
+
+.imgLocate
+{
+    height: 44px !important;
+    width: 44px !important;
+}
+
+.tblSearchHeader
+{
+    width: 100%;
+}
+
+.tblAddressResults
+{
+    width: 98%;
+}
+
+.tdHeaderMobile
+{
+    display: none;
+}
+
+.trRowHeight
+{
+    height: 40px;
+}
+
+.divAddressScrollContent
+{
+    width: 100%;
+}
+
+.divAddressList
+{
+    width: 100%;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for infoWindow*/
+
+.divParcelInformation, .divFeatureInformation
+{
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,.65);
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    z-index: 1001 !important;
+}
+
+.divParcelInfoWindow, .divFeatureInfoWindow
+{
+    z-index: 1001;
+    background-color: #585858;
+    width: 100%;
+    height: 100%;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 10px #fff;
+    -moz-box-shadow: 0 0 10px #fff;
+    -o-box-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.divParcelDataScrollContainer, .divFeatureDataScrollbarContainer, .divNeighborhoodContainer, .divBroadbandContainer
+{
+    height: 90%;
+    position: relative;
+}
+
+.divParcelScrollContent, .divNeighborhoodContent, .divBroadbandContent, .divFeatureDataScrollbarContent
+{
+    height: 95%;
+    position: relative;
+    overflow: hidden;
+}
+
+.divInfoWindowContainer .content
+{
+    color: #fff;
+    overflow: auto;
+    padding: 3px 0px 0px 5px !important;
+}
+
+.tdParcelDisplayText
+{
+    width: 40%;
+}
+
+.tdHeading
+{
+    font-weight: bold;
+    color: White;
+}
+.tblHeader
+{
+    background-color: #393939;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomleft: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: gray 1px solid;
+    behavior: url("styles/PIE.htc");
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for tab container*/
+
+.mblTabBarButton
+{
+    border-top-style: none;
+    border-bottom-style: none;
+    height: 30px;
+    padding: 0px 0px 0px 4px !important;
+}
+
+.mblTabPanelHeader .mblTabBarButton.mblTabBarButtonSelected
+{
+    height: 28px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for basemap*/
+
+.basemapThumbnail
+{
+    border: 1px solid #fff;
+    margin: 1px;
+    width: 75px;
+    cursor: pointer;
+    height: 50px;
+}
+
+/*.divLayerContainer
+{
+    right: 15px;
+    width: 180px;
+}*/
+.divLayerContainer
+{
+    right: 15px;
+    width: 210px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for share container*/
+
+.divShareContainer
+{
+    right: 15px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.divLayerContentHolder
+{
+        height:auto;
+}
+
+.divLayers
+{
+        max-height:230px;
+        width:93%;
+        overflow:hidden;
+}
+
+#BorderContainer{
+    display: none;
+}
+
+#browserName{
+    display: none;
+}
+
+/*Begin animation for mobile style*/
+.hideContainer
+{
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+    transition: All 0.5s ease-in;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+}
+
+.showContainer
+{
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+    transition: All 0.5s ease-in;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+.opacityHideAnimation
+{
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s ease-in;
+    -moz-transition: visibility 0s linear 0.5s, opacity 0.5s ease-in;
+    -o-transition: visibility 0s linear 0.5s, opacity 0.5s ease-in;
+}
+
+.opacityShowAnimation
+{
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in;
+    -moz-transition: opacity 0.5s ease-in;
+    -o-transition: opacity 0.5s ease-in;
+}
+/*End animation for mobile style*/
+
+.noMobile{
+}
+
+
+/*Begin Style for into/help*/
+.divHelpContainer
+{
+    top: 0px !important;
+    left: 0px !important;
+    background-color: rgba(0,0,0,.65) !important;
+    position: absolute !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1001 !important;
+}
+
+
+
+.divHelpContent
+{
+    z-index: 1001;
+    background-color: #585858;
+    width: 100%;
+    height: 100%;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 10px #fff;
+    -moz-box-shadow: 0 0 10px #fff;
+    -o-box-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 10px #fff;
+}
+/*End Style for into/help*/

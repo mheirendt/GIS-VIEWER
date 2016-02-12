@@ -1,0 +1,715 @@
+﻿html
+{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-family: 'Times New Roman' !important;
+    overflow: hidden;
+    color: black;
+    font-size: 11px;
+    visibility:hidden;
+}
+body{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-family: 'Times New Roman' !important;
+    overflow: hidden;
+    color: black;
+    font-size: 11px;
+}
+
+[type=text]
+{
+    font-family: 'Times New Roman';
+}
+
+#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: rgb(255, 255, 255); z-index:9999;}
+
+      #map {
+        border:solid 0px #808775;
+        -moz-border-radius:0px;
+        -webkit-border-radius:0px;
+        border-radius:0px;
+        margin:0px;
+        padding:0px;
+      }
+      #titlePane{
+        width:240px;
+        color:black;
+      }
+      .claro .dijitTitlePaneTitle {
+        background: #fff;
+        font-weight:600;
+        border: none;
+        border-bottom:solid 1px #ccc;
+        border-top:solid 1px #29201A;
+      }
+      .claro .dijitTitlePaneTitleHover {
+        background:#eee;
+      }
+      .claro .dijitTitlePaneTitleActive {
+        background:#808775;
+      }
+      .claro .dijitTitlePaneContentOuter {
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+      }
+#title {
+    font-size: 24px;
+    font-family: 'Century Gothic';
+    text-align: center;
+    margin: 0 0 5px 0;
+    border-bottom: 1px solid rgb(147, 46, 110);
+
+}
+
+
+.esriScalebarLabel
+{
+   color:black !important;
+   background-color: rgba(255,255,255,0.6);
+   padding-top:4px;
+   padding-bottom:13px;
+   padding-left:5px;
+   padding-right:20px;
+   border-radius: 15px;
+}
+
+/*Styles for application header */
+
+.lblAppName
+{
+    padding-left: 130px;
+    font-family: 'Century Gothic';
+    font-size: 45px;
+    font-weight:500;
+    color: darkgrey;
+
+}
+
+.imgOptions
+{
+    height: 30px !important;
+    width: 30px !important;
+    vertical-align: middle;
+    border: 0px;
+    cursor: pointer;
+}
+.smallImage{
+    height: 16px;
+    width: 16px;
+}
+
+.tableHeader
+{
+    width: 100%;
+    height: 100%;
+}
+
+.imgApplication
+{
+    width: 100%;
+    height:140px;
+    border-bottom: 1px solid grey;
+}
+
+.divApplicationHeader
+{
+    
+    vertical-align: middle;
+    top: 0px;
+    height: 55px;
+    width: 100%;
+    position: absolute !important;
+    z-index: 5000;
+    overflow: hidden;
+    font-size: 24px;
+    behavior: url("styles/PIE.htc");
+}
+
+.tableHeader
+{
+    width: 100%;
+    height: 100%;
+}
+
+.tdHeader, .tdHeaderMobile {
+    width: 50px;
+    padding: 15px;
+    left: 10px;
+    border-bottom: 1px inset rgba(108, 117, 111, 0.50);
+    font-weight: bolder;
+}
+.tdHeader:hover, .tdHeaderMobile:hover {
+    background-color: rgba(108, 117, 111, 0.50);
+}
+.tdselected {
+    width: 50px;
+    padding: 15px;
+    background-color: rgba(108, 117, 111, 0.80);
+    border-bottom: 1px outset rgba(108, 117, 111, 0.50);
+    font-weight: bolder;
+}
+
+#toolbar
+{
+    background: rgb(134, 139, 60);
+    -pie-background: rgb(134, 139, 60);
+    top: 0px;
+    height: 55px;
+    width: 60px;
+    display:inline-block;
+    z-index: 10002;
+    overflow: hidden;
+    behavior: url("styles/PIE.htc");
+}
+
+.tdHeaderBrowser{
+    display: none;
+}
+
+.divLogo
+{
+    position: absolute !important;
+    top: 0px;
+    border: 0px;
+    z-index: 100000;
+    text-align: center;
+    background-color: #FFFFCB;
+    display:inline-block;
+}
+.expand{
+    width:90%;
+    height:40px;
+    background-color:rgba(72, 70, 70,.6);
+    color: white;
+    border:1px inset white;
+    
+}
+
+
+
+
+/*Beginning of search box modifications*/
+
+
+
+.searchInput 
+{
+    width: 150px !important;
+}
+
+
+#DivSearchContainer
+{
+    overflow: hidden !important;
+    display:inline-block;
+    position: absolute;
+    z-index: 2;
+    left: auto;
+    right: auto;
+}
+
+#search 
+{
+    display:inline-block;
+    z-index: 2;
+    left: 2px;
+}
+#measurementDiv1
+{
+    overflow: hidden !important;
+    display:inline-block;
+    z-index: 2;
+    left: 2px;
+}
+#intro
+{
+    overflow: hidden !important;
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    left: 2px;
+}
+#DivMeasurement1
+{
+    overflow: hidden !important;
+    display:inline-block;
+    position: absolute;
+    z-index: 2;
+    padding-top: 20px;
+    left: 2px;
+}
+#BasemapContainer{
+        overflow: hidden !important;
+    display:inline-block;
+    position: absolute;
+    z-index: 2;
+    left: auto;
+    right: auto;
+}
+#basemapGallery
+
+{
+    overflow: hidden !important;
+    display:inline-block;
+    position: absolute;
+    z-index: 2;
+    left: auto;
+    right: auto;
+}
+#TOCdivContainer
+{
+    display:inline-block;
+    position: absolute;
+    overflow-y: auto;
+    font-family: 'Times New Roman';
+    font-size: 14px;
+    z-index: 2;
+    left: 2px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Styles for side panel*/
+
+.divSidePanel {
+    width: 330px;
+    position: absolute;
+    display:inline-block;
+    z-index: 999;
+    overflow: hidden !important;
+}
+#BorderContainer
+{
+    width: 330px;
+    height:100%;
+    color:black;
+    font-size: 14px;
+    display:inline-block;
+    background-color: #FFFFCB;
+}
+
+
+.divEmptySpace
+{
+    height: 55px;
+    background-color: Red;
+    width: 10px;
+}
+
+.tableHeader
+{
+    width: 100%;
+    height: 100%;
+}
+
+.tableHeader td {
+
+vertical-align: middle
+    }
+
+/*Styles for forms*/
+
+
+.formbck 
+{
+     background-color: rgb(104, 153, 174);
+     border: 1px solid #242424;
+     color: black !important;
+     border-radius: 5px;
+     padding: 5px 10px;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.divDropDownContainer
+{
+    vertical-align: middle;
+    position: relative; /* border: 1px solid white;*/
+    border: 1px solid #242424;
+    background-color: #333333;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    width: 200px; /* height: 20px;*/
+    height: 25px;
+    behavior: url("styles/PIE.htc");
+}
+.txtSelectedRequest, .txtSelectedLayout
+{
+    padding: 0px !important;
+    text-indent: 2px;
+    border: 1px solid #242424;
+    background-color: #333333;
+    width: 175px;
+    border: none !important;
+    color: white;
+    height: 23px;
+    line-height: 23px;
+}
+.divRequestTypes
+{
+    width: 200px;
+    display: none;
+    position: absolute;
+    z-index: 101;
+    border: 1px solid #242424;
+    background-color: #333333;
+    border-top: 0px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.imgDropdownCarot
+{
+    position: absolute;
+    cursor: pointer;
+    right: 0px;
+    width: 25px;
+    height: 25px;
+}
+
+    /* Printer CSS Begin */
+    h3 {
+      margin: 0 0 5px 0;
+      border-bottom: 1px solid #ccc;
+      padding: 0 0 5px 0;
+      text-align: center;
+    }
+    span {
+        font-size:smaller;
+        padding: 5px 5px;
+    }
+    .styled-select {
+   width: 260px;
+   height: 28px;
+   overflow: hidden;
+   background: url('..//images/DropDown.png') no-repeat right #ddd;
+   background-color: rgba(104, 153, 174, 1) ;
+    border-radius: 5px;
+    border: solid 1px #242424;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+   }
+
+
+.styled-select select {
+   background: transparent;
+   background-color: rgba(104, 153, 174, 0.5) ;
+   width: 288px;
+   padding: 5px;
+   font-size: 12px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+
+    textarea:focus, input:focus{
+    outline: 0;
+}
+.emphasis 
+{
+    margin: 0 0 5px 0;
+    border-bottom: 1px solid rgb(147, 46, 110);
+    padding: 0 0 5px 0;
+    display:inline-block;
+    width: 310px;
+    text-align: center;
+    font-family: 'Century Gothic' !important;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+    .shadow {
+      -moz-box-shadow: 0 0 5px #888;
+      -webkit-box-shadow: 0 0 5px #888;
+      box-shadow: 0 0 5px #888;
+    }
+    #feedback {
+
+      color: black;
+      font-family: 'Times New Roman';
+      height: auto;
+      left: auto;
+      position: absolute;
+      width: 250px;
+      z-index: 40;
+      visibility: visible;
+    }
+    .divCreateMap{
+         display: none;
+         background-color: none;
+    }
+    #feedback a {
+      border-bottom: 1px solid #ccc;
+      color: #666;
+      text-decoration: none;
+    }
+    #feedback a:hover,
+    #feedback a:active,
+    #feedback a:visited {
+      border: none;
+      color: #666;
+      text-decoration: none;
+    }
+    #note {
+      padding: 0 0 10px 0;
+    }
+    #info,
+    #information {
+      padding: 5px 0 0 0;
+    }
+    /* Printer CSS End */
+
+    /*Styles for the basemap container*/
+
+.esriBasemapGallerySelectedNode
+{
+    padding: 0px;
+    border: 0px;        
+}
+
+.basemapLabel
+{
+    background-color: transparent;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    display:inline-block;
+}
+.esriBasemapGalleryThumbnail
+{
+    border: 1px solid #fff;
+    margin: 1px;
+    width: 102px;
+    cursor: pointer;
+    height: 67px;
+}
+.esriBasemapGalleryThumbnail:hover {
+    box-shadow: inset 0 0 1000px 1000px rgba(255, 255, 255, 0.1);
+}
+
+/*End styles for basemap container*/
+
+/*Begin style for identify tasks*/
+#featureCount {
+    border-bottom: 1px solid rgb(147, 46, 110);
+    padding: 0 0 5px 0;
+    display:block;
+    font-size: 18px;
+    font-weight: bold;
+}
+.nav:hover {
+    background: rgba(104, 153, 174, 1) ;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: solid 1px #242424;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.nav:active {
+    color: white;
+}
+.nav 
+{
+    padding: 5px 10px;
+    background: rgba(104, 153, 174, .7) ;
+    color: #FFF;
+    border-radius: 5px;
+    cursor: pointer;
+    border: solid 1px #242424;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+
+}
+#header 
+{
+   padding: 0 0 5px 0;
+   width: 315px;
+   overflow: hidden !important;
+   text-align: center;
+}
+#ZoomTo {
+    display:none;
+}
+
+#pager
+{
+    display: none;
+}
+#popup
+{
+    overflow: hidden !important;
+    display: block;
+    position: absolute;
+    line-height: 200%;
+    z-index: 2;
+    left: 2px;
+}
+/*End style for identify tasks*/
+
+/*Beginning of popup modifications*/
+.esriPopup .titlePane {
+   background-color: #003300;
+   border-bottom: 1px solid #ccc;
+   font-weight: bold;
+}
+.esriPopup a 
+{
+   color: #DAE896;
+}
+.esriPopup .contentPane,
+.esriPopup .actionsPane,
+.esriPopup .pointer,
+.esriPopup .outerPointer {
+    background-color: #B3B3B3;
+}
+
+/*Begin slider style*/
+#slider{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #333 #333 #777 #333;
+	border-radius: 25px;
+	width:230px;
+	position: absolute;
+	height: 13px;
+	background-color: #8e8d8d;
+	background: url('../images/bg-track.png') repeat top left;
+    box-shadow: inset 0 1px 5px 0px rgba(0, 0, 0, .5), 
+    				  0 1px 0 0px rgba(250, 250, 250, .5);
+    left: 20px;
+}
+.tooltip {
+	position: absolute;
+	display:inline-block;
+	top: -25px;
+	width: 35px;
+	height: 20px;
+	color: #fff;
+	text-align: center;
+	font: 10pt Tahoma, Arial, sans-serif ;
+	border-radius: 3px;
+	border: 1px solid #333;
+    -webkit-box-shadow:  1px 1px 2px 0px rgba(0, 0, 0, .3);
+    box-shadow:  1px 1px 2px 0px rgba(0, 0, 0, .3);
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: -moz-linear-gradient(top,  rgba(69,72,77,0.5) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(69,72,77,0.5)), color-stop(100%,rgba(0,0,0,0.5))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8045484d', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
+}
+.tooltip2 {
+	position: absolute;
+	display:inline-block;
+	top: -25px;
+	width: 35px;
+	height: 20px;
+	color: #fff;
+	text-align: center;
+	font: 10pt Tahoma, Arial, sans-serif ;
+	border-radius: 3px;
+	border: 1px solid #333;
+    -webkit-box-shadow:  1px 1px 2px 0px rgba(0, 0, 0, .3);
+    box-shadow:  1px 1px 2px 0px rgba(0, 0, 0, .3);
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: -moz-linear-gradient(top,  rgba(69,72,77,0.5) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(69,72,77,0.5)), color-stop(100%,rgba(0,0,0,0.5))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8045484d', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
+}
+#slider2{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #333 #333 #777 #333;
+	border-radius: 25px;
+	width:230px;
+	position: absolute;
+	height: 13px;
+	background-color: #8e8d8d;
+	background: url('../images/bg-track.png') repeat top left;
+    box-shadow: inset 0 1px 5px 0px rgba(0, 0, 0, .5), 
+    				  0 1px 0 0px rgba(250, 250, 250, .5);
+    left: 20px;
+}
+
+.ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	background: url('../images/handle.png') no-repeat 50% 50%;
+    background-size: 30px 30px;
+	font-weight: bold;
+	color: #1C94C4;
+	outline: none;
+	top: -7px;
+	margin-left: -12px;
+}
+.ui-slider-range {
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #eaeaea 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eaeaea)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* IE10+ */
+	background: linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#808080', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+	position: absolute;
+	border: 0;
+	top: 0;
+	height: 100%;
+	border-radius: 50px;
+}
+section {
+	height: auto;
+	position: relative;
+}
+/*End slider style*/
+
+/* Styles for loading indicator*/
+
+.divLoadingIndicator
+{
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.65);
+    -pie-background: rgba(0,0,0,0.65);
+    position: absolute;
+    z-index: 100001;
+    width: 100%;
+    height: 100%;
+    behavior: url("styles/PIE.htc");
+}
+.content {
+    display: none;
+}

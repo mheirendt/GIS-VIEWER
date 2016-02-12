@@ -1,0 +1,218 @@
+﻿html, body, .textarea
+{
+    font-size: 14px !important;
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for icons */
+
+.customButton
+{
+    height: 30px !important;
+}
+
+.imgOptions, .imgShare
+{
+    height: 44px !important;
+    width: 44px !important;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.tdHeader, .tdHeaderMobile
+{
+    width: 60px;
+    font-weight: bolder;
+}
+
+.gpsIcon
+{
+    width: 44px;
+    vertical-align: middle;
+}
+
+.headericon
+{
+    width: 44px;
+    margin-top: 5px;
+}
+
+.
+
+{
+    z-index: 100001;
+}
+.divApplicationHeader
+{
+    z-index: 10001;
+    height: 60px !important;
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for search container*/
+
+.divAddressContent
+{
+    position: absolute;
+    background-color: rgba(98, 98, 98,.95);
+    top: 120px;
+    right: 4px;
+    width: 295px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.divAddressPlaceHolder
+{
+    width: 260px;
+    height: 46px;
+}
+
+.divAddressResultContainer
+{
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+.imgLocate
+{
+    height: 44px !important;
+    width: 44px !important;
+}
+
+.txtAddress, .txtBox
+{
+    font-size: 14px;
+    height: 44px;
+    width: 200px;
+}
+
+.bottomborder
+{
+    height: 30px;
+}
+
+.trRowHeight
+{
+    height: 20px;
+}
+
+.text
+{
+font-size:14px !important;
+}
+
+/*Styles for infowindow*/
+
+.divItemsContainer
+{
+    height: 200px;
+    position: relative;
+    width: 325px;
+}
+
+.txtSelectedRequest, .txtSelectedLayout
+{
+    font-size: 14px;
+}
+
+.divItemsContent
+{
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    width: 325px;
+}
+
+.divParcelDataScrollContainer
+{
+    height: 170px;
+    position: relative;
+    width: 325px;
+}
+.divFeatureDataScrollbarContainer
+{
+    height: 205px;
+    position: relative;
+    width: 325px;
+}
+.divBroadbandContainer, .divNeighborhoodContainer
+{
+    height: 170px;
+    position: relative;
+    width: 325px;
+}
+
+.divParcelScrollContent, .divNeighborhoodContent, .divBroadbandContent
+{
+    height: 170px;
+    position: relative;
+    width: 325px;
+    overflow: hidden;
+}
+.divFeatureDataScrollbarContent
+{
+    height: 205px;
+    position: relative;
+    width: 325px;
+    overflow: hidden;
+}
+
+.tdParcelDisplayText
+{
+    width: 40%;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for tab container*/
+
+.mblTabBarButton
+{
+    width: 105px;
+    min-width: 80px;
+    max-width: 195px;
+    border-top-style: none;
+    border-bottom-style: none;
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for esri slider*/
+
+.esriSimpleSlider
+{
+    left: 360px !important;
+    top: 70px !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Styles for basemap*/
+
+.basemapThumbnail
+{
+    border: 1px solid #fff;
+    margin: 1px;
+    width: 75px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.baseMapContainerNode
+{
+    width: 85px;
+}
+
+.divLayerContainer
+{
+    width: 225px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.divLayers
+{
+       max-height:300px;
+       width:93%;
+       overflow:hidden;
+}

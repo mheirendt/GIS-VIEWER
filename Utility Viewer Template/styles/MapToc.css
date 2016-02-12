@@ -1,0 +1,87 @@
+.TocTitle 
+{
+    border-bottom: 1px solid rgb(147, 46, 110);
+    font-size: 16px;
+    display: block;
+    font-weight: bold;
+    font-family: 'Century Gothic' !important;
+    text-align: center;
+    margin: 0 0 5px 0;
+}
+.TOCFeatureNode, .TOCFeatureLyrNode, .TOCLabelNode, .TOCSymbolNode
+{
+    margin: 2px 0 2px 16px;
+}
+.TOCsymbolParentNode
+{
+    margin: 2px 0;
+}
+.TOCsubLayerList {
+    margin: 4px 0 2px 32px;
+    padding: 2px 0;
+}
+.expandoIconTOC 
+{
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px; height: 20px;
+    margin: 0; padding: 0;
+    /* IE 7 Hack */
+    *display:inline; zoom:1
+}
+.TOCparentRow-collapsed
+{
+    background: url('../images/TOC_Collapsed.png') no-repeat;
+    
+}
+.TOCparentRow-expanded
+{
+    background: url('../images/TOC_Expand.png') no-repeat;
+    
+}
+.TOCMultiSwatch 
+{
+    margin: 0 0 4px 0; padding: 0;
+    vertical-align: middle;
+}
+.TOCswatch 
+{
+    vertical-align: middle;
+}
+.TOClayerLabel 
+{
+    vertical-align: middle;
+    font-weight: bold;
+}
+.TOCfeatSymbol 
+{
+    margin: 0; padding: 0;
+    vertical-align: middle;
+    display: inline-block;
+}
+.TOCsymbolList {
+    margin: 4px 0 0 32px;
+}
+.TOCItemDisabled { color: #999; }
+.TOCsubLabel, .TOCswatchLabel 
+{
+    font-weight: normal;
+}
+.TOCcbLabel 
+{
+    margin: 0 0 0 4px;
+    font-weight: normal;
+}
+.TOCsubLabel 
+{
+    margin: 0 0 0 32px;
+}
+.showTOCBox {
+    display: inline-block;
+    vertical-align: middle;
+    /* IE 7 Hack starts here*/
+    *display:inline; zoom:1
+}
+.hideTOCBox, .hideTOCItem {
+    display: none;
+}

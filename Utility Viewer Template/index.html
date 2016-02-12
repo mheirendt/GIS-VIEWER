@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+    <title>GIS JavaScript Viewer</title>
+    <!--[if IE]>
+    <style type="text/css">
+	#popup{
+        top: 150px;
+        }
+    </style>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+    <link rel="Stylesheet" id="dynamicStyleSheet" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.14/dojox/mobile/themes/iphone/iphone.css" />
+    <link href="styles/MapToc.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        var dojoConfig = {
+            async: false,
+            parseOnLoad: false,
+            mblHideAddressBar: false,
+            packages: [
+               { name: "js", location: location.pathname.replace(/\/[^/]+$/, '') + '/js/' }
+            ]
+        };
+    </script>
+    <script src="http://js.arcgis.com/3.14/"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/initMap.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</head>
+
+<body class="claro" onorientationchange="orientationChanged();">
+    <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline',gutters:false" style="width:100%; height:100%;">
+        <div id="map" style=" width: 100%; height: 100%;"></div>
+        <div id="toolbar" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:false, region: 'left'">
+            <table>
+                <tr>
+                    <td id="tdsearch" class="tdHeaderMobile">
+                        <img alt="Search Assets" src="images/location.png" class="imgOptions" title="Search Assets" />
+                    </td>
+                </tr>
+                <tr>
+                    <td id="tdmeasure" class="tdHeaderMobile">
+                        <img alt="Measure" src="images/area.png" class="imgOptions noMobile" title="Measure" />
+                    </td>
+                </tr>
+                <tr>
+                    <td id="tdParcelMarkUp" class="tdHeaderMobile">
+                        <img alt="Export to PDF" src="images/PDF.png" class="imgOptions noMobile" title="Export to PDF" />
+                    </td>
+                </tr>
+                <tr>
+                    <td id="tdlayers" class="tdHeaderMobile">
+                        <img alt="Display Layers" src="images/layers.png" class="imgOptions" title="Select Layers" />
+                    </td>
+                </tr>
+                <tr>
+                    <td id="tdBaseMap" class="tdHeaderMobile">
+                        <img alt="Display Basemaps" src="images/basemap.png" class="imgOptions" title="Select Basemap" />
+                    </td>
+                </tr>
+                <tr>
+                    <td id="tdHelp" class="tdHeaderMobile">
+                        <img alt="Show Help Panel" src="images/help.png" class="imgOptions" title="Help" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" id="_showbc" class="expand" title="Show the Side Panel" style="display:none;">Show</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="BorderContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:false, region: 'left'">
+            <div id="divLogo" class="divLogo" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:false, region: 'top'">
+                <img id="imgApplication" data-dojo-props="region:'center'" class="imgApplication" src="images/logo.png" />
+            </div>
+            <div id="divSidePanel" data-dojo-type="dijit/layout/ContentPane"
+                 data-dojo-props="region:'center'">
+                <div id="header" data-dojo-type="dijit/layout/ContentPane"
+                     data-dojo-props="region:'top'">
+                    <div id="featureCount">
+                        Click to Select Feature(s)
+                    </div>
+                    <div id="ZoomTo">
+                        <br />
+                        <button type="button" id="clearselection" class='nav' style="background: rgba(107, 46, 110, .9);">Clear Selection</button>
+                        <br /><br />
+                        <img alt="Zoom To" src="images/gps.png" id="zoom" title="Zoom to Selected Feature" class="imgOptions zoomTo">
+                        <br /><br />
+                    </div>
+
+                    <div id="pager">
+                        <a href='javascript:void(0);' id="previous" class='nav' style="text-decoration: none;">
+                            < Prev
+                        </a>
+
+                        <a href='javascript:void(0);' id="next" class='nav' style="text-decoration: none;">
+                            Next >
+                        </a>
+                    </div>
+                </div>
+                <div id="popup" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left'" style="color:black; font-family: 'Times New Roman';font-size: 14px;"></div>
+                <div id="intro" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style=" padding:10px; width:90%;">
+                    <div id="title"> <b>Welcome to the<br />JavaScript Sample Viewer</b><br /><br /></div>
+                    <br />
+                    <div id="accordion" data-dojo-type="dijit/layout/AccordionContainer">
+                        <div data-dojo-type="dijit/layout/ContentPane" title="Identify Assets">
+                            <img alt="Identify Assets" src="images/Binoculars.png" class="imgOptions" title="Identify Assets">
+                            <div><br />Click anywhere on the map, at any point to <b>identify assets</b></div>
+                            <div><br />To navigate through selected features use the <b>Prev</b> and <b>Next</b> buttons</div>
+                            <div><br />Typically water layers will be the first layers in order, followed by sewer layers, then facilities, then base layers</div>
+                            <div><br />Select the <img alt="Zoom To" src="images/gps.png" class="smallImage" title="Zoom To"> icon to zoom to the extent of the selected feature</div>
+                            <div><br />Note: While you are making a measurement, this ability will be disabled. In order to identify an asset, select a different tool, then click on the feature again</div>
+                        </div>
+                        <div data-dojo-type="dijit/layout/ContentPane" title="Showing and Hiding the Side Panel">
+                            <div><br />The side panel can be shown/hidden at any point in time</div>
+                            <div><br />Clearing search results automatically hides the side panel, whereas identifying an asset or clicking a button in the side bar automatically shows it</div>
+                            <div><br />Selecting a button a second time once it is already activated will also hide the side panel</div>
+                            <div><br />The "Hide" button at the bottom of the side panel is also a shortcut to hide the side panel at any point</div>
+                        </div>
+                        <div data-dojo-type="dijit/layout/ContentPane" title="Search for Assets">
+                            <img alt="Search Assets" src="images/location.png" class="imgOptions" title="Search Assets">
+                            <div><br />Select the magnifying glass to search for an address or asset</div>
+                            <div><br />You can search Service Definitions or for addresses</div>
+                            <div><br />Select the <span aria-hidden="true" role="presentation" class="searchIcon esri-icon-down-arrow"></span> symbol to search for specific asset types</div>
+                            <div><br />Select <span aria-hidden="true" role="presentation" class="searchIcon esri-icon-search"></span> or press <b>Enter</b> to search</div>
+                            <div><br />By default, all layers are searched</div>
+                        </div>
+                        <div data-dojo-type="dijit/layout/ContentPane" title="Make a Measurement">
+                            <img alt="Measure" src="images/area.png" class="imgOptions" title="Measure">
+                            <div><br />To <b>measure</b> a distance, area, or coordinates select the tape measure image</div>
+                            <div><br />Select the <img alt="Calculate Area" src="images/area.png" class="smallImage" title="Calculate Area"> icon to measure an area</div>
+                            <div><br />Select the <img alt="Calculate Distance" src="images/distance.png" class="smallImage" title="Calculate Distance"> icon to measure distance</div>
+                            <div><br />Select the <img alt="calculate Coordinates" src="images/coordinates.png" class="smallImage" title="Calculate Coordinates"> icon to measure coordinates</div>
+                            <div><br />In order to change the units of the measurement, click the <span class="dijitReset dijitInline dijitArrowButtonInner"></span> icon and select the desired unit</div>
+                        </div>
+                        <div data-dojo-type="dijit/layout/ContentPane" title="Create a Map">
+                            <img alt="Export to PDF" src="images/PDF.png" class="imgOptions" title="Export to PDF">
+                            <div><br />To create a digital or printable <b>map</b>, select the pdf symbol</div>
+                            <div><br />You may choose to enter a map title or map text in the first two boxes</div>
+                            <div><br />Select from format, quality, and size from the drop down selections</div>
+                            <div><br />After selecting <b>print</b> you may preview the map to save it</div>
+                            <div><br />Choose the <img alt="Email" src="images/groupwise.ico" class="smallImage" title="Email Map"> icon to email the link to your map</div>
+                            <div><br />Select <b>Remake Map</b> to recreate your map</div>
+                        </div>
+                        <div data-dojo-type="dijit/layout/ContentPane" title="Table of Contents">
+                            <img alt="Display Layers" src="images/layers.png" class="imgOptions" title="Select Layers">
+                            <div><br />To toggle layer visibility, select the layers image</div>
+                            <div>
+                                <br />The <img alt="Expanded" src="images/TOC_Expand.png" title="Expanded"><img alt="Collapsed" src="images/TOC_Collapsed.png" title="Collapsed"> icons represent whether the layer is collapsed
+                                or expanded. A downward facing arrow can be clicked to expand the layer. An upward facing arrow can be clicked to collapse the layer
+                            </div>
+                            <div><br />Currently visible layers are symbolized with the <img alt="checked" class="smallImage" src="images/checked.png" title="checked"> icon. Click on the box to toggle visibility</div>
+                            <div><br />If the <font color="#606060">layer name is grayed out</font> it is not visible at your current scale, you must zoom in to be able to see the layer</div>
+                            <div><br />Slide the transparency bars to lighten either the background or the main layers of the map</div>
+                        </div>
+                        <div data-dojo-type="dijit/layout/ContentPane" title="Switch Basemaps">
+                            <img alt="Display Basemaps" src="images/basemap.png" class="imgOptions" title="Select Basemap">
+                            <div><br />To switch <b>basemaps</b> select the maps image</div>
+                            <div><br />By default, the topographic map is selected</div>
+                            <div><br />Select a basemap thumbnail image to switch to that basemap</div>
+                        </div>
+                        <div data-dojo-type="dijit/layout/ContentPane" title="Help">
+                            <img alt="Show Help Panel" src="images/help.png" class="imgOptions" title="Help">
+                            <div><br />In order to view this panel again, select the help image or refresh the page</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="divCreatePDF" class="divCreateMap">
+                    <form id="frmPrint" action="" onsubmit="return false;">
+                        <div id="feedback">
+                            <div class="emphasis">
+                                Create a Printable or Digital Map
+                            </div>
+                            <div id="information">
+                                <br /><br />
+                                <!-- used for the print dijit -->
+                                <br />
+                                <label id="lblPrintTitle">Enter a Map title (optional)</label>
+                                <br />
+                                <br />
+                                <input class="formbck" type="text" id="printTitleId" name="printTitle" value="" />
+                                <br />
+                                <br />
+                                <label id="lblAdditionalText">Enter additional text (optional)</label>
+                                <br />
+                                <br />
+                                <input class="formbck" type="text" id="comments" name="Comments" style="width: 225px;" value="" />
+                                <br />
+                                <br />
+                                <label id="lblAdditionalText">Choose Image Output Format</label>
+                                <br />
+                                <br />
+                                <div class="styled-select" style="width: 85px !important">
+                                    <select name="printFormat" id="printFormatId" class="formbck">
+                                        <option value="pdf" selected>PDF</option>
+                                        <option value="png32">PNG32</option>
+                                        <option value="png8">PNG8</option>
+                                        <option value="jpg">JPG</option>
+                                        <option value="gif">GIF</option>
+                                        <option value="eps">EPS</option>
+                                        <option value="svg">SVG</option>
+                                    </select>
+                                </div>
+                                <br />
+                                <br />
+                                <label id="lblAdditionalText">Choose Map Image Quality</label>
+                                <br />
+                                <br />
+                                <div class="styled-select" style="width: 175px !important">
+                                    <select name="PrintQuality" id="printQualityId" class="formbck">
+                                        <option value="100">100 DPI (Low Quality)</option>
+                                        <option value="200">200 DPI (Mid Quality)</option>
+                                        <option value="300" selected>300 DPI (High Quality)</option>
+                                    </select>
+                                </div>
+                                <br />
+                                <br />
+                                <label id="lblAdditionalText">Choose Map Size and Layout</label>
+                                <br />
+                                <br />
+                                <div class="styled-select">
+                                    <select name="printLayout" id="printLayoutId" class="formbck">
+                                        <option value="A3 Landscape">A3 Landscape (11.7 x 16.5)</option>
+                                        <option value="A3 Portrait">A3 Portrait (11.7 x 16.5)</option>
+                                        <option value="A4 Landscape">A4 Landscape (8.3 x 11.7)</option>
+                                        <option value="A4 Portrait">A4 Portrait (8.3 x 11.7)</option>
+                                        <option value="Letter ANSI A Landscape">Letter ANSI A Landscape (8.5 x 11)</option>
+                                        <option value="Letter ANSI A Portrait">Letter ANSI A Portrait (8.5 x 11)</option>
+                                        <option value="Tabloid ANSI B Landscape" selected>Tabloid ANSI B Landscape (11 x 17)</option>
+                                        <option value="Tabloid ANSI B Portrait">Tabloid ANSI B Portrait (11 x 17)</option>
+                                    </select>
+                                </div>
+                                <br />
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button type="button" id="ResetForm" class='nav' style="width:250%;background: rgba(107, 46, 110, .9);">Reset Form</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="nextPrint">
+                                <div> <br /><br /></div>
+                                <div style="display:none;" id="note">
+                                    Note: To save your map select <b>Print Preview</b> then either Right click and select <b>Save As</b>, or
+                                    navigate to the <img alt="saveIcon" src="images/save.svg" class="imgOptions" title="Save Image">
+                                    icon on the screen itself
+                                </div>
+                                <div> <br /><br /></div>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button type="button" id="btnPrintReady" class='nav'>Print</button>
+                                            <a href="#" id="printResult" target="_blank" class='nav' style="display:none;">Preview Map</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div id="dynamicPrint" style="display:none;">
+                                    <div> <br /><br /></div>
+                                    <div> Share this map</div>
+                                    <table>
+                                        <tr>
+                                            <td><img id="groupwise" alt="Mail To" class="imgOptions" src="images/groupwise.ico" title="Mail from Groupwise"></td>
+                                        </tr>
+                                    </table>
+                                    <div> <br /><br /></div>
+                                    <button type="button" id="recreate" style="width:280px;background: rgba(107, 46, 110, .9);" class='nav'>Remake Map</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="DivSearchContainer" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'search', region:'center', closable:'false', open:'false'">
+                <div class="emphasis">Search for an Asset</div>
+                <br /><br />
+                <div id="search"></div>
+            </div>
+            <div id="BasemapContainer" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'basemap', region:'center', closable:'false', open:'false'">
+                <div class="emphasis">Select a Basemap</div>
+                <br /><br />
+                <div id="basemapGallery"></div>
+            </div>
+            <div id="measurementDiv1" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Measurement', region:'center', closable:'false', open:'false'">
+                <div class="emphasis">Create a Measurement</div>
+                <br /><br />
+                <div id="DivMeasurement1">
+                </div>
+            </div>
+            <div id="TOCdivContainer" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center', closable:'false', open:'false'">
+                <div id="tocDiv" class="slideTransition"></div>
+                <div id="toc2" class="slideTransition"></div>
+                <br /><br /><br />
+                <div>
+                    <div class="emphasis">
+                        Layer Transparency
+                    </div>
+                    <br /><br />
+                    <section>
+                        <span class="tooltip"></span> <!-- Tooltip -->
+                        <div id="slider"></div> <!-- the Slider -->
+                        <span class="volume"></span> <!-- Volume -->
+                        <br />
+                        <label style="display:none" for="minval">Minumum value:</label>
+                        <input style="display:none" type="text" id="minval" value=minval />
+                    </section>
+                </div>
+                <br /><br />
+                <div>
+                    <div class="emphasis">
+                        Map Transparency
+                    </div>
+
+                    <br /><br />
+                    <section>
+                        <span class="tooltip2"></span> <!-- Tooltip -->
+                        <div id="slider2"></div> <!-- the Slider -->
+                        <span class="volume"></span> <!-- Volume -->
+                        <br />
+                        <label style="display:none" for="minval">Minumum value:</label>
+                        <input style="display:none" type="text" id="minval" value=minval />
+                    </section>
+                </div>
+            </div>
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'">
+                <button type="button" id="_hidebc" title="Hide the Side Panel" class="expand">Hide</button>
+            </div>
+        </div>
+        <div id="loadContainer" data-dojo-type="dijit/layout/BorderContainer" style="width:200px;" data-dojo-props="region:'right'">
+            <div id="divLoadingIndicator" class="divLoadingIndicator" style="display: none;">
+                <table style="width: 100%">
+                    <tr align="center" valign="middle">
+                        <td>
+                            <br /><br /><br /><br /><br />
+                            <img src="images/loader.gif" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br /><br /><br />
+                            <span style="color:white;text-align:center;font-size:15px;padding:0px;top:-500px;">Your map is Printing.<br /><br />Interraction with the map will not affect your printout<br /><br />When this bar disappears you may return to the printing section to preview your map.</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
