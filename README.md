@@ -39,8 +39,6 @@ Instructions
 
 Fork and then clone the repo. If you are using Visual Studio for Web, open the "Utility Viewer Template" file at the root directory. Run the project to view 
 
-NOTE: You can also cut and paste each file into your own project
-
 
 
 
