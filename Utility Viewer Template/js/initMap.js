@@ -631,7 +631,7 @@ require([
                 enableSuggestions: true,
 
 
-                infoTemplate: new esri.InfoTemplate("Parcels", "<b>Parcels</b><br><br>Parcel ID ID: ${PARCELID}")
+                infoTemplate: new esri.InfoTemplate("Parcels", "<b>Parcels</b><br><br>Parcel ID: ${PARCELID}")
 
             });
 
