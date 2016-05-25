@@ -26,7 +26,7 @@ var searchInfoTemplate1;    //Info template that will show up in the side bar. T
                             //NOTE: YOU MUST ADD ALL ROOT URLS THAT USED HERE TO THE PROXY.COONFIG FILE LOCATED AT "proxxy/proxy.config"
 
 pProxyPath = "proxy/proxy.ashx";
-pGeometryService = "http://bgis19:6080/arcgis/rest/services/Utilities/Geometry/GeometryServer";
+pGeometryService = "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer";
 pDefaultBasemap = "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer";
 pOriginCoordinates = [-85.662418, 38.197897];
 pZoom = 6;
